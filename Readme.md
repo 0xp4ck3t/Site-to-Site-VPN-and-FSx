@@ -4,7 +4,7 @@ For detailed steps and configurations, follow along with the full video [**here*
 This document provides the steps and configuration details for setting up a site-to-site VPN between an AWS VPC and an on-premises network using a Fortigate firewall.
 
 ## Architecture
-![Architecture](/assets/images/projects/fortinetxaws/architecture.png)
+![Architecture](https://github.com/0xp4ck3t/Site-to-Site-VPN-and-FSx/blob/main/architecture.png)
 
 ## AWS Configuration
 
