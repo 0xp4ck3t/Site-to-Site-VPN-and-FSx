@@ -4,7 +4,7 @@ For detailed steps and configurations, follow along with the full video [**here*
 This document provides the steps and configuration details for setting up a site-to-site VPN between an AWS VPC and an on-premises network using a Fortigate firewall.
 
 ## Architecture
-![Architecture](/assets/images/projects/fortinetxaws/architecture.png)
+![Architecture](https://github.com/0xp4ck3t/Site-to-Site-VPN-and-FSx/blob/main/architecture.png)
 
 ## AWS Configuration
 
@@ -84,3 +84,36 @@ This document provides the steps and configuration details for setting up a site
 
 2. **Ping Test**
    - From an EC2 instance, ping the firewall and vice versa.
+
+# PART 2 
+
+This explains how to set up and use Amazon FSx for Windows in a networked environment. It covers the key steps involved, including configuration and access from on-premises computers.
+
+For detailed steps and configurations, follow along with the full video [**here**](https://youtu.be/ehrY4O8RgHw).
+
+1. **Create a Private Route Table**
+   - Name: `Private-RT`
+   - Attached to the Private Subnet
+   - Destination: `10.11.12.0/24`
+   - Target: `AWS-VPG`
+
+2. **Create the FSx for Windows file system**
+   - Name: `AWS-FileSystem`
+   - Deployment type: `Multi-AZ`
+   - Storage: `32GB`
+   - VPC: `AWS-VPC` (custom VPC)
+   - Preferred subnet: `Private-Subnet`
+   - Standby subnet: `Public-Subnet`
+   - Windows Auth: `Self-managed AD`
+   - **Fill out the information using the On-Prem AD data.**
+
+3. **Update the security group.**
+   - Type: `Custom TCP`
+   - Port: `445`
+   - Source: `10.11.12.0/24`
+
+4. **Attach the file system**
+   - Copy the instruction given and execute it on the AD server.
+   ![FileSystem](/assets/images/projects/fortinetxaws/attachfilesystem.png)
+   - Once the file system is attached, create a test document inside it.
+   - Map the file system to a workstation and confirm that the shared drive is working.
