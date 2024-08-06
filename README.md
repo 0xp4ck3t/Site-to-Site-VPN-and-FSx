@@ -114,6 +114,6 @@ For detailed steps and configurations, follow along with the full video [**here*
 
 4. **Attach the file system**
    - Copy the instruction given and execute it on the AD server.
-   ![FileSystem](/assets/images/projects/fortinetxaws/attachfilesystem.png)
+   ![FileSystem](https://github.com/0xp4ck3t/Site-to-Site-VPN-and-FSx/blob/main/attachfilesystem.png)
    - Once the file system is attached, create a test document inside it.
    - Map the file system to a workstation and confirm that the shared drive is working.
