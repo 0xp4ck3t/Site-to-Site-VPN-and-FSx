@@ -54,7 +54,7 @@ This document provides the steps and configuration details for setting up a site
    - Follow the configuration notes
 
 3. **Set an IP address for tunnel** 
-   - Set the IP address based on the configuration notes.
+   - Set the IP address based on the configuration notes
 
 4. **Create Static Routes**
    - Destination: `10.12.0.0/16`
